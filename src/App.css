@@ -68,8 +68,13 @@
   color: black;
   padding: 10px;
   border: 1px solid #c0c0c0;
+  cursor: default;
 }
 
 .context-menu__menu-item {
-
+  cursor: pointer;
+}
+.context-menu__menu-item_disabled {
+  cursor: default;
+  color: grey;
 }
