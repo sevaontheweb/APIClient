@@ -1,0 +1,75 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* custom styles */
+.api-block {
+    min-width: 350px;
+    height: 300px;
+    display: inline-block;
+    border: 1px solid #c0c0c0;
+    border-radius: 3px;
+    margin: 5px;
+}
+.context-menu__table {
+  display: table;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+.context-menu__table-row {
+  width: 100%;
+  height: 100%;
+}
+.context-menu__table-cell {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.context-menu__wrapper {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+.context-menu__menu {
+  position: absolute;
+  display: inline-block;
+  background: white;
+  border-radius: 3px;
+  color: black;
+  padding: 10px;
+  border: 1px solid #c0c0c0;
+}
+
+.context-menu__menu-item {
+
+}
