@@ -9,6 +9,8 @@ export default class ApiBlock extends Component {
         this.state = {
             clicksNum: 0,
             virtualizationID: this.props.virtualizationID,
+            virtualization: this.props.virtualization,
+
             apiType: this.props.apiType,
             name: this.props.name,
             protocol: this.props.protocol,
@@ -94,8 +96,9 @@ export default class ApiBlock extends Component {
           </p> */}
 
           <ContextMenu
-            virtualization={ this.props.virtualization }
+            virtualization={ this.state.virtualization }
             toggleApiRunning={ this.toggleApiRunning }
+            openEditDialog={ this.props.openEditDialog }
 
             isVisible={ this.state.menuIsVisible }
             apiIsRunning={ this.state.running }

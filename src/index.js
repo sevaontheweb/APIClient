@@ -7,7 +7,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 
 //import ('../node_modules/swagger-js-client/src/index.js');
-import("./bundled.js")
+// import("./bundled.js")
 var defaultApiPath = "http://localhost:8090";
 var args = process.argv.slice(2);
 
@@ -59,9 +59,11 @@ var putApi_func = function(data) {
 }
 
 
-var renderApis = function (data) {
+
+var renderApis = function (data, editDialogIsVisible = false) {
     var putApi = putApi_func;
-    
+    // var openEditDialog = openEditDialog_func;
+
     // ToDo why cannot update page without that stuff?
     document.getElementById('root').innerHTML = "";
 
