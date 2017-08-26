@@ -70,23 +70,35 @@ export default class ApiBlock extends Component {
 
     render() {
       return (
-        <div className="api-block" onContextMenu={ this.onContextMenu } >
-          <h3 className="api-name">{ this.state.name }</h3>
-          <h4 className="api-id"> ID { this.state.virtualizationID }</h4>
+        <div 
+          className={ "api-block " + 
+            ( this.state.running === true ? "api-block__api_started" : "api-block__api_stoped"  )}
+          onContextMenu={ this.onContextMenu } 
+        >
+          <h3 className="api-block__name">{ this.state.name }</h3>
+          {/* <h4 className="api-id"> ID { this.state.virtualizationID }</h4> */}
           {/* <button className={ this.props.running === true ? "btn-running" : "btn-stoped" } >
               Start / Stop
           </button> */}
-          <p className="api-running">
-          { this.state.running === true ? "running" : "stoped" }
+          <p className="api-block__property">
+            <span className={
+              "api-block__is-running " + 
+              ( this.state.running === true ? "api-block__is-running_started" : "api-block__is-running_stoped" )
+            } 
+            >
+              {/* { this.state.running === true ? "running" : "stoped" } */}
+            </span>
           </p>
-          <p className="api-type">
-            { this.state.apiType }
+          <p className="api-block__property">
+            <span className="api-block__api-type">
+              { this.state.apiType }
+            </span>
           </p>
-          <p className="api-property-display">
-            <span className="api-property-label">port</span> { this.state.port }
+          <p className="api-block__property">
+            <span className="api-block__property-label">port</span> { this.state.port }
           </p>
-          <p className="api-property-display">
-            <span className="api-property-label">protocol</span> { this.state.protocol }
+          <p className="api-block__property">
+            <span className="api-block__property-label">protocol</span> { this.state.protocol }
           </p>
 
           {/* <p className="api-description">

@@ -57,6 +57,10 @@ export default class ModalDialog extends Component {
   handleCloseClick(e) {
     e.preventDefault();
 
+    this.setState ({
+      name_error: "",
+      port_error: ""
+    })
     this.props.closeEditDialog();
   }
 
@@ -68,32 +72,31 @@ export default class ModalDialog extends Component {
       return (
         <div className="modal__table" >
           <div className="modal__table-row">
-            <div className="modal__table-cell">
+            <div className="modal__table-cell"> 
               <div className="modal__dialog">
-                <div className="modal__header">Edit</div>
+                <h4 className="modal__header">Edit</h4>
                 <form onSubmit={ this.handleSubmit }>
-                  <p className="modal__label">
+                  <p className="modal__property-label">
                     name
                   </p>
-                  <p className="modal__input">
+                  <p className="modal__input-block">
                     <input type="text" name="name" ref="name_field" defaultValue={ this.props.virtualization.name } />
+                    <ErrorMessage message={ this.state.name_error } />
                   </p>
-                  <ErrorMessage message={ this.state.name_error } />
 
-                  <p className="modal__label">
+                  <p className="modal__property-label">
                     port
                   </p>
-                  <p className="modal__input">
-                    <input type="text" name="port" ref="port_field" defaultValue={ this.props.virtualization.port } />
+                  <p className="modal__input-block">
+                    <input type="number" name="port" ref="port_field" defaultValue={ this.props.virtualization.port } />
+                    <ErrorMessage message={ this.state.port_error } />
                   </p>
-                  <ErrorMessage message={ this.state.port_error } />
 
-                  <p className="modal__label">
+                  <p className="modal__property-label">
                     protocol
                   </p>
-                  <ErrorMessage message={ this.state.protocol_error } />
 
-                  <p className="modal__input">
+                  <p className="modal__input-block">
                     <select name="protocol" ref="protocol_field" defaultValue={this.props.virtualization.protocol} >
                       <option value="HTTP" >HTTP</option>
                       <option value="HTTPS" >HTTPS</option>

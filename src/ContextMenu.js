@@ -36,14 +36,14 @@ class ContextMenu extends Component {
               onContextMenu={ this.props.hideContextMenu }
             >
             <div className="context-menu__menu" style={{ top: this.props.menuPosY, left: this.props.menuPosX }} >
-              <div className="context-menu__menu-header" style={{ fontSize: "0.8em", textAlign: "right" }} >
+              {/* <div className="context-menu__menu-header" style={{ fontSize: "0.8em", textAlign: "right" }} >
                 { this.props.virtualizationID }
-              </div>
+              </div> */}
               <p className="context-menu__menu-item" onClick={ _openEditDialog }>
                 Edit
               </p>
               <p className="context-menu__menu-item" onClick={ this.props.toggleApiRunning } >
-                { this.props.apiIsRunning ? "Undeploy" : "Deploy" }
+                { this.props.apiIsRunning ? "Stop" : "Start" }
               </p>
             </div>
           </div>

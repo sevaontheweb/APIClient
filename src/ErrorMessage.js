@@ -8,11 +8,11 @@ export default class ErrorMessage extends Component {
     }
 
     render () {
-        if( typeof this.props.message != undefined ) {
+        if( (typeof this.props.message !== undefined) && this.props.message != false ) {
             return (
-                <p className="modal__error-message">
+                <span className="modal__error-message">
                     { this.props.message }
-                </p>
+                </span>
             )
         } else {
             return ( <p />)

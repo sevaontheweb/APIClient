@@ -24,15 +24,65 @@
 }
 
 /* ===== custom styles ===== */
-/* context menu */
+/* api display */
+.apis-list {
+	margin-top: 110px;
+}
+
 .api-block {
-    min-width: 350px;
-    height: 300px;
+    min-width: 280px;
+    height: 250px;
     display: inline-block;
     border: 1px solid #c0c0c0;
-    border-radius: 3px;
-    margin: 5px;
+    border-radius: 7px;
+    margin: 10px 20px;
+	text-align: left;
+	padding: 5px 20px;
 }
+.api-block__property {
+	margin: 20px 0;
+}
+.api-block__api_started {
+	background: #9ee7ff;
+    background: linear-gradient(to top, #9ee7ff, white);
+}
+.api-block__api_stoped {
+	background-color: #ffffcc;
+}
+
+.api-block__name {}
+
+.api-block__is-running {
+	display: inline-block;
+	box-sizing: border-box;
+	width: 40px;
+	height: 40px;
+	/* margin: 10px auto; */
+}
+.api-block__is-running_started {
+	border-left: 40px solid green;
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+	border-right: none;
+}
+.api-block__is-running_stoped {
+	border: none;
+	background-color: red;
+}
+
+.api-block__api-type {
+	background-color: white;
+	display: inline-block;
+	padding: 2px;
+	border: 1px solid black;
+}
+
+.api-block__property-label {
+	display: inline-block;
+	min-width: 85px;
+}
+
+/* context menu */
 .context-menu__table {
   display: table;
   position: absolute;
@@ -70,10 +120,14 @@
   padding: 10px;
   border: 1px solid #c0c0c0;
   cursor: default;
+  min-width: 70px;
 }
 
-.context-menu__menu-item {
+.context-menu__menu-item,
+p.context-menu__menu-item {
+  line-height: 1.5em;
   cursor: pointer;
+  margin: 5px 0;
 }
 .context-menu__menu-item_disabled {
   cursor: default;
@@ -102,10 +156,65 @@
 }
 .modal__dialog {
   display: inline-block;
-  width: 350px;
-  height: 300px;
+  width: 450px;
+  /* height: 300px; */
   border: 1px solid #c0c0c0;
   border-radius: 3px;
   background-color: white;
   opacity: 1;
+  text-align: left;
+  padding: 0px;
+  border-radius: 7px;
+}
+
+.modal__dialog input[type=text],
+.modal__dialog input[type=number],
+.modal__dialog select {
+	padding: 3px;
+}	
+
+.modal__header {
+	margin: 0;
+	padding: 10px 0 8px;
+	text-align: center;
+	background: #f0f0f0;
+	background: linear-gradient(to top, #f0f0f0, white);
+	border-bottom: 1px solid #c0c0c0;
+	border-radius: 7px 7px 0 0;
+}
+
+.modal__property-label {
+	margin: 15px 0 0;
+	padding-left: 25px;
+}
+.modal__input-block {
+	margin: 5px 0;
+	padding-left: 25px;
+}
+
+.modal__error-message {
+	display: block;
+	font-size: 0.85em;
+	margin: 5px 0;
+	color: red;
+}
+
+.modal__footer {
+	padding: 10px 25px;
+	margin: 25px 0 0;
+	border-top: 1px solid #c0c0c0;
+	border-radius: 0 0 7px 7px;
+	text-align: right;
+}
+.modal__button {
+	font-size: 16px;
+	padding: 7px;
+	border-radius: 5px;
+	min-width: 70px;
+	background: white;
+	cursor: pointer;
+	border: 1px solid #c0c0c0;
+}
+.modal__button:last-child {
+	margin-left: 5px;
 }

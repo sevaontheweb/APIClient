@@ -37,7 +37,7 @@ export default class ApisList extends React.Component {
   
       //if(typeof apis !== "undefined" && typeof apis.virtualizationList !== "undefined" && apis.virtualizationList.length > 0) {
         return (
-          <div>
+          <div className="apis-list">
             {
               //apis.virtualizationList.map(function(item){
               this.state.apis.virtualizationList.map(function(item){

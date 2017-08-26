@@ -1,3 +1,4 @@
+// import "babel-polyfill";
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -26,6 +27,9 @@ apiInstance.apiClient.basePath = defaultApiPath;
 
 
 var getApis = function(callback) {
+    
+    console.log("getApis entered")
+    
     apiInstance.getVirtulizations( function(error, data, response) {
         if (error) {
             console.error(error);
@@ -39,6 +43,7 @@ var getApis = function(callback) {
             callback(data);
         }
     });
+
 }
 
 
@@ -51,10 +56,10 @@ var putApi_func = function(data) {
     apiInstance.putVirtualization(data.virtualizationID, opts, function (error, data, response) {
         if (error) {
             console.error(error);
-          } else {
+        } else {
             console.log('API called successfully.');
             getApis(renderApis)
-          }
+        }
     });
 }
 
