@@ -6,11 +6,22 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
 
+// (c) 
+function getParameterByName(name) {
+    var url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
 
 //import ('../node_modules/swagger-js-client/src/index.js');
 // import("./bundled.js")
 var defaultApiPath = "http://localhost:8090";
-var args = process.argv.slice(2);
+// var args = process.argv.slice(2);
 
 // console.log(`server started listening on port ${port}`)
 
@@ -21,8 +32,13 @@ var apiInstance = new api_client.ReadyapiApi();
 // } else {
 //     apiInstance.apiClient.basePath = defaultApiPath;    
 // }
-apiInstance.apiClient.basePath = defaultApiPath;
-
+var virt_server_path = getParameterByName('virtserverpath');
+if(!virt_server_path) {
+    apiInstance.apiClient.basePath = defaultApiPath;
+}
+else {
+    apiInstance.apiClient.basePath = virt_server_path;
+}
 // apiInstance.apiClient.defaultHeaders = { "Cache-Control": "no-cache" }; // header added in IE, fails in Chrome
 
 //import Modal from './Modal';
