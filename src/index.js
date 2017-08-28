@@ -83,7 +83,7 @@ var putApi_func = function(data) {
 
 
 
-var renderApis = function (data, editDialogIsVisible = false) {
+var renderApis = function (data) {
     var putApi = putApi_func;
     // var openEditDialog = openEditDialog_func;
 

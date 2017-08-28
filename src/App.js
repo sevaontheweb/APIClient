@@ -13,7 +13,6 @@ import ApisList from './ApisList.js';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { apis: this.props.apis }
   }
 
   render() {
@@ -31,7 +30,6 @@ class App extends Component {
         <ApisList 
           apis={ this.props.apis }
           putApi={ this.props.putApi }
-          activeVirtualization={ this.state.activeVirtualization }
         />
 
       </div>
