@@ -8,7 +8,7 @@ export default class ErrorMessage extends Component {
     }
 
     render () {
-        if( (typeof this.props.message !== undefined) && this.props.message != false ) {
+        if( (typeof this.props.message !== undefined) && this.props.message !== false ) {
             return (
                 <span className="modal__error-message">
                     { this.props.message }

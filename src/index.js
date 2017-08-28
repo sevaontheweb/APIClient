@@ -21,14 +21,16 @@ var apiInstance = new api_client.ReadyapiApi();
 // } else {
 //     apiInstance.apiClient.basePath = defaultApiPath;    
 // }
-apiInstance.apiClient.basePath = defaultApiPath;    
+apiInstance.apiClient.basePath = defaultApiPath;
+
+// apiInstance.apiClient.defaultHeaders = { "Cache-Control": "no-cache" }; // header added in IE, fails in Chrome
 
 //import Modal from './Modal';
 
 
 var getApis = function(callback) {
     
-    console.log("getApis entered")
+    //console.log("getApis entered")
     
     apiInstance.getVirtulizations( function(error, data, response) {
         if (error) {
@@ -37,7 +39,7 @@ var getApis = function(callback) {
             //return { errorcode: 500, errormessage: "virtualization server error" };
             callback({ errorcode: 500, errormessage: "virtualization server error" });
         } else {
-        console.log('API called successfully. Returned data: ' + JSON.stringify(data));
+            console.log('API called successfully. Returned data: ' + JSON.stringify(data));
             // resp.send(data);
             // return data;
             callback(data);
