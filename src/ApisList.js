@@ -35,7 +35,21 @@ export default class ApisList extends React.Component {
       var openEditDialog = this.openEditDialog_func;
       var closeEditDialog = this.closeEditDialog_func;
   
-      //if(typeof apis !== "undefined" && typeof apis.virtualizationList !== "undefined" && apis.virtualizationList.length > 0) {
+      if( typeof this.state.apis === undefined || 
+        typeof this.state.apis.virtualizationList === undefined ||
+        typeof this.state.apis.virtualizationList === null ||
+        !Array.isArray( this.state.apis.virtualizationList ) ||
+        this.state.apis.virtualizationList.length < 1)
+      {
+        return (
+          <div>
+            No backend server was found by given url.<br />
+            Try specifying another backend url in query string param "virtserverpath", i.e.:<br />
+            <i>http://localhost:3000?virtserverpath=http://localhost:8091</i>
+          </div>
+        )
+      }
+      else {
         return (
           <div className="apis-list">
             {
@@ -65,10 +79,7 @@ export default class ApisList extends React.Component {
             />
           </div>
         )
-      // }
-      // else {
-      //   return <div />
-      // }
+      }
     }
   }
   
