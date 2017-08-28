@@ -42,9 +42,9 @@ export default class ApisList extends React.Component {
         this.state.apis.virtualizationList.length < 1)
       {
         return (
-          <div>
-            No backend server was found by given url.<br />
-            Try specifying another backend url in query string param "virtserverpath", i.e.:<br />
+          <div className="no-backend-message">
+              No backend server was found by given url.<br />
+              Please check that backend server is running, or try specifying another backend url in query string param "virtserverpath", i.e.:<br />
             <i>http://localhost:3000?virtserverpath=http://localhost:8091</i>
           </div>
         )
@@ -53,9 +53,7 @@ export default class ApisList extends React.Component {
         return (
           <div className="apis-list">
             {
-              //apis.virtualizationList.map(function(item){
               this.state.apis.virtualizationList.map(function(item){
-                {/* return <ApiBlock key={ item.virtualizationID } api_name={ item.name } api_id={ item.virtualizationID } /> */}
                 return <ApiBlock 
                   virtualization = { item }
                   putApi = { putApi }
