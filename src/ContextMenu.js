@@ -8,21 +8,10 @@ class ContextMenu extends Component {
         isVisible: this.props.isVisible,
         virtualization: this.props.virtualization
       }
-      //this.hideMenu = this.hideMenu.bind(this);
     }
   
-    // hideMenu() {
-    //   this.setState({
-    //     isVisible: false
-    //   });
-    //   alert("click")
-    // }
-  
-  
-  
-  
+
     render () {
-  
       var _props = this.props;
       var _state = this.state;
       var _openEditDialog = function() {
@@ -36,9 +25,6 @@ class ContextMenu extends Component {
               onContextMenu={ this.props.hideContextMenu }
             >
             <div className="context-menu__menu" style={{ top: this.props.menuPosY, left: this.props.menuPosX }} >
-              {/* <div className="context-menu__menu-header" style={{ fontSize: "0.8em", textAlign: "right" }} >
-                { this.props.virtualizationID }
-              </div> */}
               <p className="context-menu__menu-item" onClick={ _openEditDialog }>
                 Edit
               </p>

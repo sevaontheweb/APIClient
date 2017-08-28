@@ -8,7 +8,7 @@ export default class ModalDialog extends Component {
     super(props);
 
     this.state = {
-      isVisible: false, // this.props.isVisible,
+      isVisible: false,
       virtualization: this.props.virtualization
     }
 
@@ -120,5 +120,3 @@ export default class ModalDialog extends Component {
 
   }
 }
-
-// export default ModalDialog;

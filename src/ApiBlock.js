@@ -16,11 +16,9 @@ export default class ApiBlock extends Component {
             protocol: this.props.protocol,
             port: this.props.port,
             running: this.props.running,
-            menuIsVisible: false // this.props.menuIsVisible
-        //    isGoing: true,
-        //    numberOfGuests: 2
+            menuIsVisible: false
         };
-        // this.handleInputChange = this.handleInputChange.bind(this);
+
         this.buttonHandleClick = this.buttonHandleClick.bind(this);
         this.onContextMenu = this.onContextMenu.bind(this);
         this.hideContextMenu = this.hideContextMenu.bind(this);
@@ -30,9 +28,6 @@ export default class ApiBlock extends Component {
     buttonHandleClick() {
         this.setState((prevState, props) => ({
           clicksNum: prevState.clicksNum + 1,
-        // menuIsVisible: true,
-        // menuPosX: 0,
-        // menuPosY: 0
         }));
     }
 
@@ -43,20 +38,15 @@ export default class ApiBlock extends Component {
       var y = e.clientY;
 
       this.setState((prevState, props) => ({
-        menuIsVisible: true, // !prevState.menuIsVisible,
+        menuIsVisible: true,
         menuPosX: x,
         menuPosY: y
-      }));      
-      //alert(this.state.menuIsVisible)
+      }));
     }
 
     hideContextMenu(e) {
-      // this.setState ({
-      //   menuIsVisible: false
-      // });
-
       this.setState((prevState, props) => ({
-        menuIsVisible: false, // !prevState.menuIsVisible,
+        menuIsVisible: false,
       }));
       e.stopPropagation();
       e.preventDefault();
@@ -76,17 +66,12 @@ export default class ApiBlock extends Component {
           onContextMenu={ this.onContextMenu } 
         >
           <h3 className="api-block__name">{ this.props.name }</h3>
-          {/* <h4 className="api-id"> ID { this.state.virtualizationID }</h4> */}
-          {/* <button className={ this.props.running === true ? "btn-running" : "btn-stoped" } >
-              Start / Stop
-          </button> */}
           <p className="api-block__property">
             <span className={
               "api-block__is-running " + 
               ( this.props.running === true ? "api-block__is-running_started" : "api-block__is-running_stoped" )
             } 
             >
-              {/* { this.state.running === true ? "running" : "stoped" } */}
             </span>
           </p>
           <p className="api-block__property">
@@ -100,12 +85,6 @@ export default class ApiBlock extends Component {
           <p className="api-block__property">
             <span className="api-block__property-label">protocol</span> { this.props.protocol }
           </p>
-
-          {/* <p className="api-description">
-            <button onClick={ this.buttonHandleClick }>
-                Save { this.state.clicksNum } times
-            </button>
-          </p> */}
 
           <ContextMenu
             virtualization={ this.props.virtualization }
