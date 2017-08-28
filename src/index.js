@@ -87,9 +87,6 @@ var renderApis = function (data, editDialogIsVisible = false) {
     var putApi = putApi_func;
     // var openEditDialog = openEditDialog_func;
 
-    // ToDo why cannot update page without that stuff?
-    document.getElementById('root').innerHTML = "";
-
     ReactDOM.render (
         <App 
             apis={ data }

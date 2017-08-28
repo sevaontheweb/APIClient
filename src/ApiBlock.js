@@ -72,10 +72,10 @@ export default class ApiBlock extends Component {
       return (
         <div 
           className={ "api-block " + 
-            ( this.state.running === true ? "api-block__api_started" : "api-block__api_stoped"  )}
+            ( this.props.running === true ? "api-block__api_started" : "api-block__api_stoped"  )}
           onContextMenu={ this.onContextMenu } 
         >
-          <h3 className="api-block__name">{ this.state.name }</h3>
+          <h3 className="api-block__name">{ this.props.name }</h3>
           {/* <h4 className="api-id"> ID { this.state.virtualizationID }</h4> */}
           {/* <button className={ this.props.running === true ? "btn-running" : "btn-stoped" } >
               Start / Stop
@@ -83,7 +83,7 @@ export default class ApiBlock extends Component {
           <p className="api-block__property">
             <span className={
               "api-block__is-running " + 
-              ( this.state.running === true ? "api-block__is-running_started" : "api-block__is-running_stoped" )
+              ( this.props.running === true ? "api-block__is-running_started" : "api-block__is-running_stoped" )
             } 
             >
               {/* { this.state.running === true ? "running" : "stoped" } */}
@@ -91,14 +91,14 @@ export default class ApiBlock extends Component {
           </p>
           <p className="api-block__property">
             <span className="api-block__api-type">
-              { this.state.apiType }
+              { this.props.apiType }
             </span>
           </p>
           <p className="api-block__property">
-            <span className="api-block__property-label">port</span> { this.state.port }
+            <span className="api-block__property-label">port</span> { this.props.port }
           </p>
           <p className="api-block__property">
-            <span className="api-block__property-label">protocol</span> { this.state.protocol }
+            <span className="api-block__property-label">protocol</span> { this.props.protocol }
           </p>
 
           {/* <p className="api-description">
@@ -108,12 +108,12 @@ export default class ApiBlock extends Component {
           </p> */}
 
           <ContextMenu
-            virtualization={ this.state.virtualization }
+            virtualization={ this.props.virtualization }
             toggleApiRunning={ this.toggleApiRunning }
             openEditDialog={ this.props.openEditDialog }
 
             isVisible={ this.state.menuIsVisible }
-            apiIsRunning={ this.state.running }
+            apiIsRunning={ this.props.running }
             menuPosX={ this.state.menuPosX }
             menuPosY={ this.state.menuPosY }
             hideContextMenu={ this.hideContextMenu }

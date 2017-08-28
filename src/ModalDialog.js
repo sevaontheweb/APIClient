@@ -51,6 +51,8 @@ export default class ModalDialog extends Component {
       virt.port = this.refs.port_field.value;
       virt.protocol = this.refs.protocol_field.value;
       this.props.putApi(virt);
+
+      this.props.closeEditDialog();
     }
   }
 

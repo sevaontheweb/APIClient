@@ -29,7 +29,7 @@ class App extends Component {
         </p> */}
 
         <ApisList 
-          apis={ this.state.apis }
+          apis={ this.props.apis }
           putApi={ this.props.putApi }
           activeVirtualization={ this.state.activeVirtualization }
         />
