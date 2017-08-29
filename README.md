@@ -1,8 +1,14 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
+## Before first run
+
+To install the project dependencies, after unpacking of the tarball please proceed to the project directory and run this command in terminal:
+
+`npm install`
+
 ## Starting the project
 
-In the project directory, you can run:
+To start the project, please run in the project directory:
 
 `npm start`
 

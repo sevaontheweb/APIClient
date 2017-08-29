@@ -1,7 +1,10 @@
 {
-  "name": "client",
+  "name": "api-virtualization-server-client",
   "version": "0.1.0",
   "main": "src/index.js",
+  "engines": {
+    "node": "6.11.2"
+  },
   "dependencies": {
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
