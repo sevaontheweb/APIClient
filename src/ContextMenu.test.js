@@ -31,7 +31,6 @@ it('renders without crashing with params', () => {
 
 
 it('shows "Stop" when related virt is running', () => {
-  const div = document.createElement('div');
   expect(ReactDOMServer.renderToStaticMarkup(
     <ContextMenu
       menuPosY = {0}
@@ -49,7 +48,6 @@ it('shows "Stop" when related virt is running', () => {
 
 
 it('shows "Start" when related virt is stoped', () => {
-  const div = document.createElement('div');
   expect(ReactDOMServer.renderToStaticMarkup(
     <ContextMenu
       menuPosY = {0}
@@ -67,8 +65,6 @@ it('shows "Start" when related virt is stoped', () => {
 
 
 it('fires Edit onClick handler', () => {
-  const div = document.createElement('div');
-
   var dummy = ""
   var dummyMenuEditClick = function () {
     dummy = "clicked";
@@ -96,8 +92,6 @@ it('fires Edit onClick handler', () => {
 
 
 it('fires Edit onClick handler', () => {
-  const div = document.createElement('div');
-
   var dummy = ""
   var dummyMenuEditClick = function () {
     dummy = "clicked";
